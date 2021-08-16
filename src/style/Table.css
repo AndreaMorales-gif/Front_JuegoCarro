@@ -1,0 +1,136 @@
+.content-alignment {
+  position: absolute;
+  padding: 100px 0;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.see-podium {
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  background: rgba(0, 0, 26, 0.902);
+}
+
+.see-podium h2 {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.see-podium.hidden {
+  display: none;
+}
+
+table {
+  display: none;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+
+table.active {
+  display: block;
+}
+
+thead tr th {
+  display: table-cell;
+  width: 30%;
+  padding: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255);
+  background: rgba(0, 0, 26, 0.902);
+}
+
+tbody tr {
+  display: table-row;
+  width: 100%;
+}
+
+tbody tr:hover {
+  background-color: rgba(243, 244, 246);
+}
+
+tbody tr td {
+  position: static;
+  display: table-cell;
+  padding: 0.75rem 0;
+  text-align: center;
+  color: rgba(31, 41, 55);
+}
+
+tbody tr td span {
+  display: none;
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  color: rgba(255, 255, 255);
+  background: linear-gradient(to top, #60a5fa, #3b82f6, #1d4ed8);
+}
+
+tbody tr td a {
+  text-decoration: none;
+  color: #60a5fa;
+}
+
+tbody tr td .btn {
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 980px) {
+  .content-alignment {
+    position: absolute;
+    width: 90%;
+    top: 50px;
+    transform: translate(-50%, 0%);
+  }
+
+  .see-podium {
+    margin-bottom: 20px;
+  }
+
+  table {
+    margin-bottom: 0;
+  }
+
+  thead tr th {
+    display: none;
+  }
+
+  tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  tbody tr td {
+    display: block;
+    position: relative;
+    width: 100%;
+    border: 1px solid #444;
+    padding-left: 5rem;
+  }
+
+  tbody tr td span {
+    display: flex;
+  }
+}
+
+/* .Margen {
+  margin-top: 200px;
+} */

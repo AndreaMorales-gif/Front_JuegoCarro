@@ -7,7 +7,7 @@ const Ranking = () => {
   const [two, setTwo] = useState([]);
   const [three, setThree] = useState([]);
 
-  function getPodium() {
+  const getPodium = () => {
     const RANKINFIRST = axios
       .get(Environment.Api + "/findAllPositionOne")
       .then((res) => {
@@ -34,18 +34,18 @@ const Ranking = () => {
       .catch((err) => {
         console.error(err.mesagge);
       });
-  }
+  };
 
   useEffect(() => {
     getPodium();
     console.log(getPodium());
-  });
+  }, []);
 
   return (
-    <div className="container mt-4">
-      <h2>First place winners</h2>
-      <table className="table table-striped table-bordered mb-5">
-        <thead className="bg-primary text-center text-white">
+    <div class="content-alignment">
+      <h2 className="Margen">First place winners</h2>
+      <table className="active">
+        <thead>
           <tr>
             <th>Player Name</th>
             <th>Player Cart</th>
@@ -54,21 +54,24 @@ const Ranking = () => {
           </tr>
         </thead>
 
-        <tbody id="firstPlace">{one.map((item, i) => {
-            return(
-                <tr key={i}>
-                <td>{item.namePositionOne}</td>
-                <td>{item.carPositionOne}</td>
-                <td>{item.lane}</td>
-                <td>{item.kilometerPositionOne}</td>
-            </tr>
-            )
-        })}</tbody>
+        <tbody id="firstPlace">
+          {one.map((item, i) => {
+            return (
+              <tr key={i}>
+
+                <td><span>Player Name</span>{item.namePositionOne}</td>
+                <td><span>Player Cart</span>{item.carPositionOne}</td>
+                <td><span>Lane</span>{item.lane}</td>
+                <td><span>Kilometers Traveled</span>{item.kilometerPositionOne}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
 
       <h2>Second place winners</h2>
-      <table className="table table-striped table-bordered mb-5">
-        <thead className="bg-primary text-center text-white">
+      <table className="active">
+        <thead>
           <tr>
             <th>Player Name</th>
             <th>Player Cart</th>
@@ -77,21 +80,23 @@ const Ranking = () => {
           </tr>
         </thead>
 
-        <tbody id="secondPlace">{two.map((item, i) => {
-            return(
-                <tr key={i}>
-                <td>{item.namePositionTwo}</td>
-                <td>{item.carPositionTwo}</td>
-                <td>{item.lane}</td>
-                <td>{item.kilometerPositionTwo}</td>
-            </tr>
-            )
-        })}</tbody>
+        <tbody id="secondPlace">
+          {two.map((item, i) => {
+            return (
+              <tr key={i}>
+                <td><span>Player Name</span>{item.namePositionTwo}</td>
+                <td><span>Player Cart</span>{item.carPositionTwo}</td>
+                <td><span>Lane</span>{item.lane}</td>
+                <td><span>Kilometers Traveled</span>{item.kilometerPositionTwo}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
 
       <h2>Third place winners</h2>
-      <table className="table table-striped table-bordered">
-        <thead className="bg-primary text-center text-white">
+      <table className="active">
+        <thead>
           <tr>
             <th>Player Name</th>
             <th>Player Cart</th>
@@ -100,16 +105,18 @@ const Ranking = () => {
           </tr>
         </thead>
 
-        <tbody id="thirdPlace">{three.map((item, i) => {
-            return(
-                <tr key={i}>
-                <td>{item.namePositionThree}</td>
-                <td>{item.carPositionThree}</td>
-                <td>{item.lane}</td>
-                <td>{item.kilometerPositionThree}</td>
-            </tr>
-            )
-        })}</tbody>
+        <tbody id="thirdPlace">
+          {three.map((item, i) => {
+            return (
+              <tr key={i}>
+                <td><span>Player Name</span>{item.namePositionThree}</td>
+                <td><span>Player Cart</span>{item.carPositionThree}</td>
+                <td><span>Lane</span>{item.lane}</td>
+                <td><span>Kilometers Traveled</span>{item.kilometerPositionThree}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
