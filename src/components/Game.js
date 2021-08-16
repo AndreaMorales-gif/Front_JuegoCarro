@@ -38,10 +38,10 @@ class Playing {
     for (let i = 0; i < bookmarkData.length; i++) {
       BOOKMARK.innerHTML += `
         <h3 class="text-center text-secondary border border-primary mb-3 p-2">
-          <span class="text-primary">Player:</span> ${bookmarkData[i][0]}
-          <span class="text-primary">Car:</span> ${bookmarkData[i][1]}
-          <span class="text-primary">Lane:</span> ${bookmarkData[i][2]}
-          <span class="text-primary">Meters To Run:</span> ${bookmarkData[i][3]}
+          <span>Player:</span> ${bookmarkData[i][0]}
+          <span>Car:</span> ${bookmarkData[i][1]}
+          <span>Lane:</span> ${bookmarkData[i][2]}
+          <span>Meters To Run:</span> ${bookmarkData[i][3]}
         </h3>
       `;
     }

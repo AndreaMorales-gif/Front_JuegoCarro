@@ -1,0 +1,70 @@
+.form-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	padding: 40px;
+	transform: translate(-50%, -50%);
+	background: rgba(0, 0, 26, 0.902);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	max-height: auto;
+}
+
+.form-box #nameAndCart {
+	position: relative;
+	height: 150px;
+	display: none;
+	overflow-y: scroll;
+}
+
+.form-box #nameAndCart.active {
+	display: block;
+	padding: 10px 0;
+}
+
+
+.form-box h2 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+
+.form-box .user-box {
+	position: relative;
+}
+
+.form-box .user-box input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+.form-box .user-box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.form-box .user-box input:focus ~ label,
+.form-box .user-box input:valid ~ label {
+	top: -20px;
+	left: 0;
+	color: #03e9f4;
+	font-size: 12px;
+	border: none;
+	background: none;
+	outline: none;
+}

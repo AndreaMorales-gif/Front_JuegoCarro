@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Environment from "../environment/BackendUrl";
+import "../style/Form.css";
 
 const PLAYERS_DATA = [];
 
@@ -46,27 +47,27 @@ export default function Form({ checkingData }) {
     const KILOMETERS_TRACK = document.getElementById("kilometersTrack").value;
     PLAYERS_DATA.push(KILOMETERS_TRACK);
 
+    NAME_AND_CART.classList.add('active');
     for (let i = 0; i < NUMBER_PLAYERS; i++) {
       NAME_AND_CART.innerHTML += `   
-            <div class="form-group">
-              <input
-                type="text"
-                name="name"
-                id="player${i + 1}"
-                class="form-control mb-1"
-                placeholder="Name of player ${i + 1}"
-                required
-              />
-              <input
-                type="text"
-                name="car"
-                id="car${i + 1}"
-                class="form-control"
-                placeholder="Player cart"
-                required
-              />
-            </div>
-          `;
+      <div class='user-box'>
+        <input type="text"
+          name="name"
+          id="player${i + 1}"
+          required 
+        />
+        <label>Name of player ${i + 1}</label>
+      </div>  
+
+    <div class='user-box'>
+        <input type="text"
+          name="car"
+          id="car${i + 1}"
+          required
+        />
+        <label>Player cart</label>
+    </div>
+    `;
     }
 
     setDataFilled(true);
@@ -88,45 +89,45 @@ export default function Form({ checkingData }) {
 
   return (
     <div className="container">
-      <div className="row d-flex justify-content-center">
-        <form className="card col-6 mt-4 p-2" id="form" onSubmit={handleSubmit}>
-          <div className="card-header bg-primary text-center text-white">
-            Add Players
+      <div class="form-box">
+        <h2>Add Players</h2>
+        <form id="form" onSubmit={handleSubmit}>
+          <div class="user-box">
+            <input
+              type="number"
+              min="3"
+              className="form-control"
+              id="numberPlayers"
+              required
+            />
+            <label>Number of players</label>
           </div>
-          <div className="card-body">
-            <div className="form-group">
-              <input
-                type="number"
-                min="3"
-                className="form-control"
-                id="numberPlayers"
-                placeholder="Number of players"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="number"
-                step="0.01"
-                className="form-control"
-                id="kilometersTrack"
-                placeholder="Kilometers of the track"
-                required
-              />
-            </div>
-            <div id="nameAndCart"></div>
+          <div class="user-box">
+            <input
+              type="number"
+              step="0.01"
+              className="form-control"
+              id="kilometersTrack"
+              required
+            />
+            <label>Kilometers of the track</label>
           </div>
+          <div id="nameAndCart"></div>
 
           {DataFilled ? (
-            <button
-              type="submit"
-              className="btn btn-primary btn-block"
-              onClick={handleClick}
-            >
+            <button className="button" type="submit" onClick={handleClick}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               Start Game
             </button>
           ) : (
-            <button type="submit" className="btn btn-primary btn-block">
+            <button className="button" type="submit">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               Following
             </button>
           )}
