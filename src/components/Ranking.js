@@ -3,10 +3,9 @@ import axios from "axios";
 import Environment from "../environment/BackendUrl";
 
 const Ranking = () => {
-
-    const [one, setOne] = useState([]);
-    const [two, setTwo] = useState([]);
-    const [three, setThree] = useState([]);
+  const [one, setOne] = useState([]);
+  const [two, setTwo] = useState([]);
+  const [three, setThree] = useState([]);
 
   function getPodium() {
     const RANKINFIRST = axios
@@ -16,7 +15,7 @@ const Ranking = () => {
       })
       .catch((err) => {
         console.error(err.mesagge);
-      }); 
+      });
 
     const RANKINSECOND = axios
       .get(Environment.Api + "/findAllPositionTwo")
@@ -55,8 +54,16 @@ const Ranking = () => {
           </tr>
         </thead>
 
-        <tbody id="firstPlace"></tbody>
-
+        <tbody id="firstPlace">{one.map((item, i) => {
+            return(
+                <tr key={i}>
+                <td>{item.namePositionOne}</td>
+                <td>{item.carPositionOne}</td>
+                <td>{item.lane}</td>
+                <td>{item.kilometerPositionOne}</td>
+            </tr>
+            )
+        })}</tbody>
       </table>
 
       <h2>Second place winners</h2>
@@ -70,7 +77,16 @@ const Ranking = () => {
           </tr>
         </thead>
 
-        <tbody id="secondPlace"></tbody>
+        <tbody id="secondPlace">{two.map((item, i) => {
+            return(
+                <tr key={i}>
+                <td>{item.namePositionTwo}</td>
+                <td>{item.carPositionTwo}</td>
+                <td>{item.lane}</td>
+                <td>{item.kilometerPositionTwo}</td>
+            </tr>
+            )
+        })}</tbody>
       </table>
 
       <h2>Third place winners</h2>
@@ -84,7 +100,16 @@ const Ranking = () => {
           </tr>
         </thead>
 
-        <tbody id="thirdPlace"></tbody>
+        <tbody id="thirdPlace">{three.map((item, i) => {
+            return(
+                <tr key={i}>
+                <td>{item.namePositionThree}</td>
+                <td>{item.carPositionThree}</td>
+                <td>{item.lane}</td>
+                <td>{item.kilometerPositionThree}</td>
+            </tr>
+            )
+        })}</tbody>
       </table>
     </div>
   );

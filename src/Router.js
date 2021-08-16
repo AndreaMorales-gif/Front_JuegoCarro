@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Game from "./components/Game";
 import Menu from "./components/Menu";
-
+import Ranking from "./components/Ranking";
 
 export default function Router() {
   const [DataReady, setDataReady] = useState(false);
@@ -27,6 +27,8 @@ export default function Router() {
             <Form checkingData={checkingData} />
           </Route>
         )}
+        <Route exact path="/Ranking" component={Ranking} />
+        
       </Switch>
       </Menu>
   </BrowserRouter>
