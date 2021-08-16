@@ -1,48 +1,52 @@
-import React, { useState } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../style/Menu.css';
 
-export default function Menu({children}) {
-  return (
-    <React.Fragment>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">
-              Home
-            </a>
-            <a class="nav-link" href="#">
-              Features
-            </a>
-            <a class="nav-link" href="#">
-              Pricing
-            </a>
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-            >
-              Disabled
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    {children}
-    </React.Fragment>
-  );
+export default function Menu({ children }) {
+	const handleShowMenu = () => {
+		const BTNBARS = document.getElementById('btnBars');
+		const NAVIGATION = document.getElementById('navigation');
+
+		BTNBARS.checked ? NAVIGATION.classList.add('show-menu') : NAVIGATION.classList.remove('show-menu');
+	};
+
+	const handleEffectActive = (e) => {
+		const BTNBARS = document.getElementById('btnBars');
+		const NAVIGATION = document.getElementById('navigation');
+		const ACTIVE_CLASS_ELEMENT = document.querySelector('.active');
+		const CLICKED_ITEM = e.target.parentNode;
+
+		if (!CLICKED_ITEM.classList.contains('active')) {
+			BTNBARS.checked = false;
+			NAVIGATION.classList.remove('show-menu');
+			ACTIVE_CLASS_ELEMENT.classList.remove('active');
+			CLICKED_ITEM.classList.add('active');
+		}
+	};
+	return (
+		<React.Fragment>
+			<div className="bars">
+				<input type="checkbox" id="btnBars" onClick={handleShowMenu} />
+				<label htmlFor="btnBars">
+					<span id="line1"></span>
+					<span id="line2"></span>
+					<span id="line3"></span>
+				</label>
+			</div>
+
+			<ul className="navigation" id="navigation">
+				<li>
+					<a href="/" className="website-section active">
+						<span onClick={handleEffectActive}>Inicio</span>
+					</a>
+				</li>
+				<li>
+					<Link to="/Ranking" className="website-section">
+						<span onClick={handleEffectActive}>Ranking</span>
+					</Link>
+				</li>
+			</ul>
+			{children}
+		</React.Fragment>
+	);
 }
