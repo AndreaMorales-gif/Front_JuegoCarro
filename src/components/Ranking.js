@@ -12,6 +12,7 @@ const Ranking = () => {
       .get(Environment.Api + "/findAllPositionOne")
       .then((res) => {
         setOne(res.data);
+        
       })
       .catch((err) => {
         console.error(err.mesagge);
