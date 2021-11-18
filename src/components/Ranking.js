@@ -44,14 +44,14 @@ const Ranking = () => {
 
   return (
     <div class="content-alignment">
-      <h2 className="Margen">First place winners</h2>
+      <h2 className="Margen">Ganadores en primer puesto</h2>
       <table className="active">
         <thead>
           <tr>
-            <th>Player Name</th>
-            <th>Player Cart</th>
-            <th>Lane</th>
-            <th>Kilometers Traveled</th>
+            <th>Nombre de jugador</th>
+            <th>Número carro</th>
+            <th>Carril</th>
+            <th>Kilometros Recorridos</th>
           </tr>
         </thead>
 
@@ -60,24 +60,24 @@ const Ranking = () => {
             return (
               <tr key={i}>
 
-                <td><span>Player Name</span>{item.namePositionOne}</td>
-                <td><span>Player Cart</span>{item.carPositionOne}</td>
-                <td><span>Lane</span>{item.lane}</td>
-                <td><span>Kilometers Traveled</span>{item.kilometerPositionOne}</td>
+                <td><span>Nombre de jugador</span>{item.namePositionOne}</td>
+                <td><span>Número carro</span>{item.carPositionOne}</td>
+                <td><span>Carril</span>{item.lane}</td>
+                <td><span>Kilometros Recorridos</span>{item.kilometerPositionOne}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
 
-      <h2>Second place winners</h2>
+      <h2>Ganadores en segundo puesto</h2>
       <table className="active">
         <thead>
           <tr>
-            <th>Player Name</th>
-            <th>Player Cart</th>
-            <th>Lane</th>
-            <th>Kilometers Traveled</th>
+            <th>Nombre de jugador</th>
+            <th>Número carro</th>
+            <th>Carril</th>
+            <th>Kilometros Recorridos</th>
           </tr>
         </thead>
 
@@ -85,24 +85,24 @@ const Ranking = () => {
           {two.map((item, i) => {
             return (
               <tr key={i}>
-                <td><span>Player Name</span>{item.namePositionTwo}</td>
-                <td><span>Player Cart</span>{item.carPositionTwo}</td>
-                <td><span>Lane</span>{item.lane}</td>
-                <td><span>Kilometers Traveled</span>{item.kilometerPositionTwo}</td>
+                <td><span>Nombre de jugador</span>{item.namePositionTwo}</td>
+                <td><span>Número carro</span>{item.carPositionTwo}</td>
+                <td><span>Carril</span>{item.lane}</td>
+                <td><span>Kilometros Recorridos</span>{item.kilometerPositionTwo}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
 
-      <h2>Third place winners</h2>
+      <h2>Ganadores en tercer puestos</h2>
       <table className="active">
         <thead>
           <tr>
-            <th>Player Name</th>
-            <th>Player Cart</th>
-            <th>Lane</th>
-            <th>Kilometers Traveled</th>
+            <th>Nombre de jugador</th>
+            <th>Número carro</th>
+            <th>Carril</th>
+            <th>Kilometros Recorridos</th>
           </tr>
         </thead>
 
@@ -110,10 +110,10 @@ const Ranking = () => {
           {three.map((item, i) => {
             return (
               <tr key={i}>
-                <td><span>Player Name</span>{item.namePositionThree}</td>
-                <td><span>Player Cart</span>{item.carPositionThree}</td>
-                <td><span>Lane</span>{item.lane}</td>
-                <td><span>Kilometers Traveled</span>{item.kilometerPositionThree}</td>
+                <td><span>Nombre de jugador</span>{item.namePositionThree}</td>
+                <td><span>Número carro</span>{item.carPositionThree}</td>
+                <td><span>Carril</span>{item.lane}</td>
+                <td><span>Kilometros Recorridos</span>{item.kilometerPositionThree}</td>
               </tr>
             );
           })}

@@ -38,10 +38,10 @@ class Playing {
     for (let i = 0; i < bookmarkData.length; i++) {
       BOOKMARK.innerHTML += `
         <h3 class="text-center text-secondary border border-primary mb-3 p-2">
-          <span>Player:</span> ${bookmarkData[i][0]}
-          <span>Car:</span> ${bookmarkData[i][1]}
-          <span>Lane:</span> ${bookmarkData[i][2]}
-          <span>Meters To Run:</span> ${bookmarkData[i][3]}
+          <span>Jugador:</span> ${bookmarkData[i][0]}
+          <span>Carro:</span> ${bookmarkData[i][1]}
+          <span>Carril:</span> ${bookmarkData[i][2]}
+          <span>Metros por correr:</span> ${bookmarkData[i][3]}
         </h3>
       `;
     }
@@ -55,7 +55,7 @@ class Playing {
 
   showShift(bookmarkData, turn) {
     const HEADER = document.getElementById("header");
-    HEADER.innerText = `Player Turn: ${bookmarkData[turn][0]}`;
+    HEADER.innerText = `Turno del jugador: ${bookmarkData[turn][0]}`;
   }
 
   assignShifts(bookmarkData, turn, podium) {

@@ -25,19 +25,19 @@ const Podium = ({ dataForRanking, km }) => {
 			if (dataForRanking[i][4] === 1) {
 				POSITION_ONE.innerHTML = `
             <td>
-              <span>Player Name</span>
+              <span>Nombre del jugador</span>
               ${dataForRanking[i][0]}
             </td>
             <td>
-              <span>Player Cart</span>
+              <span>Número carro</span>
               ${dataForRanking[i][1]}
             </td>
             <td>
-              <span>Lane</span>
+              <span>Carril</span>
               ${dataForRanking[i][2]}
             </td>
             <td>
-              <span>Kilometers </span>
+              <span>Kilometros</span>
               ${km}
             </td>
             `;
@@ -58,19 +58,19 @@ const Podium = ({ dataForRanking, km }) => {
 			} else if (dataForRanking[i][4] === 2) {
 				POSITION_TWO.innerHTML = `
         <td>
-          <span>Player Name</span>
+          <span>Nombre del jugador</span>
           ${dataForRanking[i][0]}
         </td>
         <td>
-          <span>Player Cart</span>
+          <span>Número carro</span>
           ${dataForRanking[i][1]}
         </td>
         <td>
-          <span>Lane</span>
+          <span>Carril</span>
           ${dataForRanking[i][2]}
         </td>
         <td>
-          <span>Kilometers </span>
+          <span>Kilometros</span>
           ${km}
         </td>
         `;
@@ -91,19 +91,19 @@ const Podium = ({ dataForRanking, km }) => {
 			} else {
 				POSITION_THREE.innerHTML = `
           <td>
-            <span>Player Name</span>
+            <span>Nombre del jugador</span>
             ${dataForRanking[i][0]}
           </td>
           <td>
-            <span>Player Cart</span>
+            <span>Número carro</span>
             ${dataForRanking[i][1]}
           </td>
           <td>
-            <span>Lane</span>
+            <span>Carril</span>
             ${dataForRanking[i][2]}
           </td>
           <td>
-            <span>Kilometers </span>
+            <span>Kilometros</span>
             ${km}
           </td>
         `;
@@ -125,7 +125,7 @@ const Podium = ({ dataForRanking, km }) => {
 		}
 
 		setSeeRanking(true);
-		TEXT.innerText = '¿Do you want to see the global ranking?';
+		TEXT.innerText = '¿Quieres ver el ranking global?';
 	};
 
 	const goToRanking = () => setGoToRanking(true);

@@ -7,10 +7,10 @@ const PodiumTable = ({ SeeRanking, goToRanking, seePodium }) => {
 				<table id="table">
 					<thead>
 						<tr>
-							<th>Player Name</th>
-							<th>Player Cart</th>
-							<th>Lane</th>
-							<th>Kilometers</th>
+							<th>Nombre del jugador</th>
+							<th>Número carro</th>
+							<th>Carril</th>
+							<th>Kilometros</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -21,14 +21,14 @@ const PodiumTable = ({ SeeRanking, goToRanking, seePodium }) => {
 				</table>
 
 				<div className="see-podium" id="see-podium">
-					<h2 id="text">Congratulations it was a great race</h2>
+					<h2 id="text">Felicidades fue una gran carrera</h2>
 					{SeeRanking ? (
 						<button className="button" onClick={goToRanking}>
 							<span></span>
 							<span></span>
 							<span></span>
 							<span></span>
-							Go To Ranking
+							Ir a Ranking
 						</button>
 					) : (
 						<button className="button" onClick={seePodium}>
@@ -36,7 +36,7 @@ const PodiumTable = ({ SeeRanking, goToRanking, seePodium }) => {
 							<span></span>
 							<span></span>
 							<span></span>
-							See Podium
+							Ver Podium
 						</button>
 					)}
 				</div>

@@ -56,7 +56,7 @@ export default function Form({ checkingData }) {
           id="player${i + 1}"
           required 
         />
-        <label>Name of player ${i + 1}</label>
+        <label>Nombre del jugador ${i + 1}</label>
       </div>  
 
     <div class='user-box'>
@@ -65,7 +65,7 @@ export default function Form({ checkingData }) {
           id="car${i + 1}"
           required
         />
-        <label>Player cart</label>
+        <label>Número de carro</label>
     </div>
     `;
     }
@@ -90,7 +90,7 @@ export default function Form({ checkingData }) {
   return (
     <div className="container">
       <div class="form-box">
-        <h2>Add Players</h2>
+        <h2>Añadir jugadores</h2>
         <form id="form" onSubmit={handleSubmit}>
           <div class="user-box">
             <input
@@ -100,7 +100,7 @@ export default function Form({ checkingData }) {
               id="numberPlayers"
               required
             />
-            <label>Number of players</label>
+            <label>Número de jugadores</label>
           </div>
           <div class="user-box">
             <input
@@ -110,7 +110,7 @@ export default function Form({ checkingData }) {
               id="kilometersTrack"
               required
             />
-            <label>Kilometers of the track</label>
+            <label>Kilometros de la pista</label>
           </div>
           <div id="nameAndCart"></div>
 
@@ -120,7 +120,7 @@ export default function Form({ checkingData }) {
               <span></span>
               <span></span>
               <span></span>
-              Start Game
+              Iniciar juego
             </button>
           ) : (
             <button className="button" type="submit">
@@ -128,7 +128,7 @@ export default function Form({ checkingData }) {
               <span></span>
               <span></span>
               <span></span>
-              Following
+              Siguiente
             </button>
           )}
         </form>
